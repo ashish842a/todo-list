@@ -4,6 +4,9 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///todo.db"
+
+# postgres://todo_list_4gbt_user:d91Ij4iJxAIQwimV0nirEUX81nezm6np@dpg-cgfic6seoogqfc5jd5qg-a.oregon-postgres.render.com/todo_list_4gbt
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -57,4 +60,4 @@ def delete(sno):
     return redirect("/")
 
 if __name__ == "__main__":
-    app.run(debug=True,port=3000,host="0.0.0.0")
+    app.run(debug=False,port=3000,host="0.0.0.0")
